@@ -1,0 +1,475 @@
+:root{
+--Off-white: hsl(36, 100%, 99%);
+--Grayish-blue: hsl(233, 8%, 79%);
+--Dark-grayish-blue: hsl(236, 13%, 42%);
+--Very-dark-blue: hsl(240, 100%, 5%);
+--Soft-orange: hsl(35, 77%, 62%);
+--Soft-red: hsl(5, 85%, 63%);
+
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-weight: 100 900; 
+  font-style:normal;/*no italic or other*/
+   
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 90px;
+  background-color:var(--Off-white);
+  font-size:15px;
+
+}
+
+body p{
+ color: var(--Dark-grayish-blue);
+    line-height:1.8;
+    font-size:16px;
+
+}
+
+ header{
+   
+    margin-bottom:40px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.logo {
+max-width:100px;
+padding: 15px 0px;
+}
+
+
+.menu-icon {
+display:none;
+max-width:50px;
+object-fit:cover;
+cursor:pointer;
+align-self:center;
+
+
+}
+
+.menu {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+   
+
+}
+
+.menu li{
+list-style-type:none;
+padding:0 15px
+
+}
+
+.menu li a{
+    text-decoration: none;
+    color:var(--Dark-grayish-blue);
+    font-size:18px;
+}
+
+
+.menu li a:active{
+
+    color:var(--Soft-orange);
+}
+
+.main{
+
+
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:65px;
+    
+}
+
+
+.left{
+    width:70%;
+    display:flex;
+    flex-direction:column;
+    margin-right:30px;
+    justify-content:space-between;
+}
+.left img{
+    width:100%;
+
+}
+
+ .description{
+
+    display:flex;
+    gap:45px;
+ 
+}
+.bigText{
+    width:40%;
+    font-size:55px;
+    font-weight:800;
+    line-height: 1.1;
+    
+}
+.explanation{
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:30px;
+    font-size:17px;
+}
+.explanation p{
+    text-align:left;
+}
+
+.explanation a{
+background-color:var(--Soft-red);
+padding:18px 18px;
+width:50%;
+color:var(--Very-dark-blue);
+text-align:center;
+font-weight:700;
+text-decoration:none;
+letter-spacing: 2px;
+text-transform: uppercase;
+align-self:bottom;
+
+}
+
+.explanation a:active{
+    background-color:var(--Very-dark-blue);
+    color:var(--Off-white);
+    cursor:pointer;
+}
+
+.right{
+    width:30%; 
+    background-color:var(--Very-dark-blue);
+    color:var(--Off-white);
+    padding:20px;
+
+ 
+}    
+.right h1{
+    color:var(--Soft-orange);
+    margin-bottom:20px;
+    margin-top:5px;
+    font-size:2.5rem;
+}
+
+.questions{
+
+ display: flex;
+  flex-direction: column;
+  flex:1;
+  gap:30px;
+}
+
+.questions > :not(:last-child) {
+  border-bottom: 1px solid var(--Dark-grayish-blue);
+  padding-bottom: 30px;}
+
+  .questions > :last-child {
+  padding-bottom: 10px;}
+
+.news h3{
+    font-size:1.5rem;
+    margin-bottom:10px;
+    font-weight:700;
+    color:var(--Off-white);
+}
+
+
+.news h3:active{
+
+    color:var(--Soft-orange);
+    cursor:pointer;
+
+}
+.bottom{
+
+    display:flex;
+        justify-content:space-between;
+        gap:5px;
+        flex:1;
+}
+.card {
+    display:flex;
+    justify-content:space-between;
+    gap:13px;  
+    flex:1;
+}
+
+.card img {
+  width: 25%;             
+ object-fit: cover; 
+}
+
+.img-desc{
+width:70%;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+
+.card h1{
+    color:var(--Soft-red);
+    font-weight:700;
+    font-size:2rem;
+}
+
+.card h3{
+    
+    font-size:1.3rem;
+    font-weight:900;
+
+}
+
+.card p{
+    align-self:flex-end;
+    
+   
+}
+.card h3:active{
+color: var(--Soft-red);
+    cursor:pointer;
+    align-self: flex-end;
+
+}
+/*it will make body opaque when mobile menu is opened*/
+#blur-body{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+z-index:500;
+    display:none;
+
+}
+
+/*mobile menu*/
+.overlay{
+    display:none;
+    position:fixed;
+    right:0;
+    top:0;
+    height:100%;
+    width:70%;
+    z-index:1000;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    background: #ffff;
+
+}
+.close{
+   display:flex;
+   justify-content:flex-end;
+   
+
+
+}
+.closebutton{
+    max-width:100%;
+    padding: 20px;
+
+}
+
+
+
+
+.overlay-content li{
+    list-style-type:none;
+    flex-direction:column;
+
+}
+.overlay li a  { 
+display:block;
+text-decoration:none;
+font-weight:600;
+font-size:1.5rem;
+padding:20px;
+}
+
+@media only screen and (max-width:768px){
+
+    body{
+        margin:20px;
+        padding:0;
+    }
+    header{
+        margin-bottom:10px;
+    }
+.logo{
+    width:12%;
+}
+
+.menu{
+    display:none;
+    
+}
+.menu-icon{
+    display:block;
+}
+
+.main{
+    display:block;
+    width:100%
+}
+.left{
+    display:block;
+    width:100%;
+    margin-right:0;
+}
+
+.description{
+    display:block;
+}
+.bigText{
+    width:100%;
+    font-size:45px;
+    margin: 20px 0;
+}
+.explanation{
+    display:block;
+    width:100%;
+}
+.explanation p  {
+    width:100%;
+    margin:20px 0;
+    display:block;
+}
+
+.explanation  a{
+    display:block;
+    width:60%;
+    padding:16px 18px;
+    margin:30px 0 60px 0;
+    text-align:center;
+    letter-spacing: 2;
+}
+
+
+.right{
+    width:100%;
+    padding:20px 12px;
+    
+}
+.right h1{
+font-size:2rem
+}
+.news h3{
+    font-size:1.3rem;
+}
+
+.bottom{
+    display:block;
+}
+.card{
+
+    margin-bottom:30px;
+}
+.card img{
+    width:30%;
+aspect-ratio:1/1;
+object-fit :cover;
+}
+.img-desc{
+gap:15px;
+
+}
+.card h3{
+    font-size:1.1rem;
+}
+.card p{
+    align-self:flex-start;
+}
+
+}
+
+@media only screen and (max-width : 1440px) and (min-width:1024px){
+
+body{
+    margin:10px;
+    
+}
+.main{
+   
+align-items:stretch;
+}
+.left{
+    margin-right:15px;
+
+     
+}
+.left img {
+    width: 100%;
+    height: 50vh;      
+    object-fit: cover; 
+    margin-bottom:7px;  
+}
+ .bigText{
+    font-size:52px;
+
+}
+
+}
+
+@media only screen and (max-width: 1024px)  and (min-width:768px){
+ body{
+    margin:40px;
+ }
+    .main {
+    display: flex;
+    flex-direction: column; 
+    gap: 55px;
+  }
+
+  .left,  .right {
+    width: 100%;
+  }
+
+  .left img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom:20px
+  }
+
+
+.card {
+        flex-direction:column;
+   margin:20px;
+    }
+
+.card img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    flex:1;
+
+}
+.card h1{
+    flex:1
+    
+}
+
+
+}
