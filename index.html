@@ -102,7 +102,7 @@
   </section>
 
 
-  <div id = "blur-body">
+  <div id = "blur-body"></div>
     <div id="myNav" class="overlay">
         <div class="close">
         <img src="assets/images/icon-menu-close.svg" alt = "close-menu" onClick="closeNav()" class="closebutton" >
@@ -116,21 +116,18 @@
       <li><a>Categories</a></li>
       </ul>
     </div>
-  </div>
+  
 
       <script>
-     function openNav(){
-      document.getElementById("myNav").style.display="block";
-      document.getElementById("blur-body").style.display="block";
-      
+     function openNav() {
+         document.getElementById("myNav").classList.add("active");
+         document.getElementById("blur-body").classList.add("active");
+      }
 
-     }
-
-     function closeNav(){
-      document.getElementById("myNav").style.display="none";
-      document.getElementById("blur-body").style.display="none";
-
-     }
+       function closeNav() {
+         document.getElementById("myNav").classList.remove("active");
+         document.getElementById("blur-body").classList.remove("active");
+      }
 
       </script>
   
